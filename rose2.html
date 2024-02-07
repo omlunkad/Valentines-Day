@@ -1,0 +1,278 @@
+<!-- Slideshow container -->
+<div class="slideshow-container">
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <img src="https://app.gemoo.com/share/image-annotation/613732697260556288?codeId=PajZzln00g1NG" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="https://app.gemoo.com/share/image-annotation/613732591455031296?codeId=PajZzln00g1NG" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="https://app.gemoo.com/share/image-annotation/613732315415314432?codeId=PajZzln00g1NG" style="width:100%">
+    </div>
+</div>
+  
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Diya,Will you be my Valentine?</h2>
+      </div>
+      <div class="modal-footer">
+        <button id="yesBtn" class="btn">Yes</button>
+        <button id="noBtn" class="btn">No</button>
+      </div>
+    </div>
+</div>
+  
+<style>
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(255,105,180,0.9); /* Pink w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 25px; /* Rounded corners */
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #FF69B4; /* HotPink */
+  color: white;
+  font-family: 'Courier New', Courier, monospace; /* Change font */
+  text-align: center; /* Center the text */
+  border-top-left-radius: 25px; /* Rounded corners */
+  border-top-right-radius: 25px; /* Rounded corners */
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #FF69B4; /* HotPink */
+  color: white;
+  text-align: center; /* Center the text */
+  border-bottom-left-radius: 25px; /* Rounded corners */
+  border-bottom-right-radius: 25px; /* Rounded corners */
+}
+
+/* The buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  position: absolute;
+  font-family: 'Courier New', Courier, monospace; /* Change font */
+  font-size: 20px; /* Increase font size */
+  margin: 0 10px; /* Add some space between the buttons */
+}
+
+/* The button container */
+#btnContainer {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+</style>
+  
+<script>
+let slideIndex = 0;
+showSlides();
+
+// Next/previous controls
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+    // Show the modal after the last slide
+    showModal();
+  }    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the buttons
+let yesBtn = document.getElementById("yesBtn");
+let noBtn = document.getElementById("noBtn");
+
+// Set the initial position of the "Yes" button
+yesBtn.style.left = '40%';
+yesBtn.style.top = '50%';
+
+// Set the initial position of the "No" button
+noBtn.style.left = '60%';
+noBtn.style.top = '50%';
+
+// Show the modal
+function showModal() {
+  modal.style.display = "block";
+}
+
+// Create a variable to keep track of the number of times the "Yes" button is clicked
+let yesBtnClickCount = 0;
+
+// When the user clicks on yes button, show a message
+yesBtn.onclick = function() {
+    yesBtnClickCount++;
+    if (yesBtnClickCount == 1) {
+        alert("That is an excellent decision! Proceed to terms and conditions 😊");
+
+  // After the user clicks "OK" on the alert, replace the previous question with your message
+  // Replace 'yourMessage' with the message you want to display
+  let yourMessage = `
+  <ul>
+    <li><strong>Long Distance Love:</strong> Despite the miles between us, you agree to virtual dates, watching the same movie together online, and simultaneous stargazing while on a call.</li>
+    <li><strong>Surprises:</strong> You agree to surprise me with gifts and visits, and not to complain about the cost or distance..</li>
+    <li><strong>Patience:</strong> You agree to be patient with the challenges of a long-distance relationship, knowing that the distance only makes our connection stronger.</li>
+    <li><strong>Romantic Gestures:</strong> You agree to reciprocate romantic gestures, which may include sending me cute selfies and voice messages every day or sharing songs that remind you of us.</li>
+    <li><strong>NSFW Clause:</strong> You agree to provide me with atleast a zillion kisses (and other similar wet stuff) every day .</li>
+    <li><strong>Future Planning:</strong> You agree to dream about our future together, including but not limited to, trips we’ll take, meals we’ll share, and Shashibala and Shishupal.</li>
+    <li> By accepting these terms and conditions, you acknowledge that you are the best thing that ever happened to me, and that I love you more than anything in the world. </li>
+
+  </ul>
+  `;
+
+  // Get the modal content
+  let modalContent = document.querySelector(".modal-content");
+
+  // Create a new div element for the title
+  let titleDiv = document.createElement("div");
+  titleDiv.innerHTML = "<h2>Terms and Conditions</h2>";
+
+  // Insert the title at the top of the modal content
+  modalContent.insertBefore(titleDiv, modalContent.firstChild);
+
+  // Get the modal header
+  let modalHeader = document.querySelector(".modal-header");
+
+  // Replace the text in the modal header with your message
+  modalHeader.innerHTML = yourMessage;
+
+   // Move the "Yes" button to a new position so it doesn't cover the text
+   // Move the "Yes" button lower
+  yesBtn.style.marginTop = "250px";
+
+} else if (yesBtnClickCount == 2) {
+    // Replace the text in the modal header with a clickable YouTube link
+    let youtubeLink = "https://youtu.be/ags3vxqbk-s?si=FYRA81coaDUoB72E";
+    let linkElement = document.createElement("a");
+    linkElement.href = youtubeLink;
+    linkElement.textContent = "Our Love Song>>>";
+    linkElement.target = "_blank"; // Open the link in a new tab
+
+    // Get the modal header
+    let modalHeader = document.querySelector(".modal-header");
+
+    // Remove the previous text from the modal header
+    modalHeader.textContent = "";
+
+    // Add the clickable YouTube link to the modal header
+    modalHeader.appendChild(linkElement);
+}
+
+}
+
+
+
+// When the user tries to click on no button, move it away
+noBtn.onmouseover = function() {
+  // Get the mouse position relative to the window
+  let mouseX = event.clientX;
+  let mouseY = event.clientY;
+
+  // Get the button position and size
+  let btnX = noBtn.offsetLeft;
+  let btnY = noBtn.offsetTop;
+  let btnW = noBtn.offsetWidth;
+  let btnH = noBtn.offsetHeight;
+
+  // Calculate the distance between the mouse and the button center
+  let distX = Math.abs(mouseX - (btnX + btnW / 2));
+  let distY = Math.abs(mouseY - (btnY + btnH / 2));
+
+  // Calculate the new button position
+  let newX = btnX - distX * Math.sign(mouseX - btnX) * 3;
+  let newY = btnY - distY * Math.sign(mouseY - btnY) * 3;
+
+  // Check if the button is about to be cornered
+  if (newX <= 0 || newX >= window.innerWidth - btnW) {
+    newX = window.innerWidth - newX - btnW;
+  }
+  if (newY <= 0 || newY >= window.innerHeight - btnH) {
+    newY = window.innerHeight - newY - btnH;
+  }
+
+  // Make sure the button stays within the window
+  newX = Math.max(0, Math.min(newX, window.innerWidth - btnW));
+  newY = Math.max(0, Math.min(newY, window.innerHeight - btnH));
+
+  // Set the new button position
+  noBtn.style.left = newX + "px";
+  noBtn.style.top = newY + "px";
+
+  // When the user tries to click on no button, show a message
+  noBtn.onclick = function() {
+    alert("That's the wrong answer. I know you love me. Try again!");
+  }
+}
+</script>
